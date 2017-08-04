@@ -19,10 +19,16 @@
     "react-scripts": "1.0.10"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
+    "start-d": "react-scripts start",
     "dev": "nodemon server.js",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test-r": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha server/**/*.test.js",
+    "test-watch": "nodemon --exec npm test"
+  },
+  "engines":{
+    "node": "7.10.0"
   }
 }

@@ -45,28 +45,28 @@ class AddTermForm extends Component {
                         <ControlLabel>Word:</ControlLabel>
                         <FormControl
                             type="text"
-                            placeholder="word"
+                            placeholder="Word"
                             onChange={e => this.setState({word: e.target.value})}
                             value={this.state.word}
                         />
                     </FormGroup>
+                    <FormGroup bsSize="large">
                         <ControlLabel>Translation:</ControlLabel>
                         <FormControl
                             type="text"
-                            placeholder="translation"
+                            placeholder="Translation"
                             onChange={e => this.setState({trans: e.target.value})}
                             value={this.state.trans}
                         />
-                    <FormGroup bsSize="large">
                     </FormGroup>
+                    <FormGroup bsSize="large">
                         <ControlLabel>Comments:</ControlLabel>
                         <FormControl
                             type="text"
-                            placeholder="comments"
+                            placeholder="Comments"
                             onChange={e => this.setState({comments: e.target.value})}
                             value={this.state.comments}
                         />
-                    <FormGroup bsSize="large">
                     </FormGroup>
                     <FormGroup bsSize="large">
                         <ControlLabel>Language</ControlLabel>

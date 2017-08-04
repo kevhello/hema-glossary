@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import FilterButton from './FilterButton';
 import SearchList from './SearchList';
+import AddTermForm from './AddTermForm';
 import {Grid, Row, Col} from 'react-bootstrap';
 
 class SearchView extends Component {
@@ -26,6 +27,9 @@ class SearchView extends Component {
         return(
             <Grid>
                 <Row>
+                    <AddTermForm getTerms={this.props.getTerms}/>
+                </Row>
+                <Row>
                     <Col xs={12} sm={12} md={3}  className="col-lg-offset-3" >
                         <FilterButton
                             id="filter-button"
@@ -42,6 +46,7 @@ class SearchView extends Component {
                             value={this.state.searchInput}
                             onChange={this.onInputChange}
                             className="form-control"
+                            placeholder="Search"
                         />
                     </Col>
                 </Row>

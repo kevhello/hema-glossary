@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 // Define the schema
 const termSchema = new Schema({
-    word: {type: String, unique: true},
-    lang: {type: String, unique: true, uppercase: true},
+    word: {type: String, unique: true, required: true},
+    lang: {type: String, uppercase: true, required: true},
     trans: String,
     comment: String,
 });
