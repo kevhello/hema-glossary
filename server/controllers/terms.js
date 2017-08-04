@@ -16,7 +16,13 @@ exports.retrieveTerms = async function(req, res, next) {
 
 exports.createTerm = async function(req, res, next) {
     try {
-        const { word, lang, trans, comments } = req.body;
+        let { word, lang, trans, comments } = req.body;
+
+        // Trim whitespace from both sides of strings
+        word = word.trim();
+        lang = lang.trim();
+        trans = trans.trim();
+        comments = comments.trim();
 
         // Check if the fields are valid
         termCheck({ word, lang, trans, comments });
