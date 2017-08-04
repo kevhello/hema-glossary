@@ -16,12 +16,12 @@ exports.retrieveTerms = async function(req, res, next) {
 
 exports.createTerm = async function(req, res, next) {
     try {
-        const { word, lang, trans, comment } = req.body;
+        const { word, lang, trans, comments } = req.body;
 
         // Check if the fields are valid
-        termCheck({ word, lang, trans, comment });
+        termCheck({ word, lang, trans, comments });
 
-        const term = new Terms({word, lang, trans, comment});
+        const term = new Terms({word, lang, trans, comments});
         await term.save();
 
         // Send back term indicating that it was created.
