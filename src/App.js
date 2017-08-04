@@ -15,8 +15,8 @@ class App extends Component {
 
   getTerms = async () => {
       try {
-          const GET_URL = 'http://localhost:3090/terms';
-          // const GET_URL = 'https://hema-glossary.herokuapp.com/terms';
+          // const GET_URL = 'http://localhost:3090/terms';
+          const GET_URL = 'https://hema-glossary.herokuapp.com/terms';
           const response = await axios.get(GET_URL);
           this.setState({
               glossary: response.data.terms,
