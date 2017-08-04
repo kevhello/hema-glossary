@@ -62,7 +62,7 @@ class AddTermForm extends Component {
                     <FormGroup bsSize="large">
                         <ControlLabel>Comments:</ControlLabel>
                         <FormControl
-                            type="text"
+                            componentClass="textarea"
                             placeholder="Comments"
                             onChange={e => this.setState({comments: e.target.value})}
                             value={this.state.comments}

@@ -5,6 +5,7 @@ import SearchView from './components/SearchView';
 import About from './components/About';
 import Header from './components/Header';
 import axios from 'axios';
+import { Col, Row } from 'react-bootstrap';
 
 
 class App extends Component {
@@ -23,7 +24,7 @@ class App extends Component {
           });
 
       } catch (err) {
-          this.setState({error: `Error in fecthing terms: ${err}`});
+          this.setState({error: `${err}`});
       }
   };
 
@@ -32,7 +33,7 @@ class App extends Component {
   );
 
   renderAlert = () => (
-      this.state.error ? <div>this.state.error</div> : null
+      this.state.error ? <div>{this.state.error}</div> : null
   );
 
   state = {
@@ -57,8 +58,12 @@ class App extends Component {
                     />
                     <Route exact path="/about" component={About} />
                 </Switch>
-                {this.renderLoading()}
-                {this.renderAlert()}
+                <Row>
+                    <Col>
+                        {this.renderLoading()}
+                        {this.renderAlert()}
+                    </Col>
+                </Row>
           </div>
         </HashRouter>
     );
