@@ -6,7 +6,7 @@ const termSchema = new Schema({
     word: {type: String, unique: true, required: true},
     lang: {type: String, uppercase: true, required: true},
     trans: String,
-    comment: String,
+    comments: String,
 });
 
 // Create the model class

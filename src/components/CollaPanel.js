@@ -20,7 +20,7 @@ class CollaPanel extends Component {
                     <h1>{word.word}</h1>
                     <p><strong>Translation: </strong>{word.trans}</p>
                     <p><strong>Language: </strong>{word.lang}</p>
-                    <p><strong>Comments: </strong>{word.comment}</p>
+                    <p><strong>Comments: </strong>{word.comments}</p>
                 </Panel>
             </div>
         );
