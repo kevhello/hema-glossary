@@ -25,7 +25,7 @@
 
 :root {
   font-size: 16px;
-  font-family: SansSerif;
+  font-family: Roboto, sans-serif;
 }
 
 .loader {
@@ -54,3 +54,12 @@
     width: 20px;
 }
 
+#loader {
+    margin-left: calc(50% - 60px);
+}
+
+#about {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 1.4rem;
+}

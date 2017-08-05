@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import FilterButton from './FilterButton';
 import SearchList from './SearchList';
 import AddTermForm from './AddTermForm';
-import {Grid, Row, Col, Form, FormControl, FormGroup} from 'react-bootstrap';
+import { Row, Col, Form, FormControl, FormGroup } from 'react-bootstrap';
 
 class SearchView extends Component {
     state = {
