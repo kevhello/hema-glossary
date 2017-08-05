@@ -27,7 +27,13 @@ class AddTermForm extends Component {
             });
 
             // Clear error message
-            this.setState({error: ''});
+            this.setState({
+                word: '',
+                trans: '',
+                comments: '',
+                lang: '',
+                error: '',
+            });
 
         } catch (err) {
             this.setState({error: `Error submitting form ${err}`});
@@ -49,6 +55,7 @@ class AddTermForm extends Component {
                             placeholder="Word"
                             onChange={e => this.setState({word: e.target.value})}
                             value={this.state.word}
+                            required
                         />
                     </FormGroup>
                     <FormGroup bsSize="large">
@@ -72,6 +79,7 @@ class AddTermForm extends Component {
                     <FormGroup bsSize="large">
                         <ControlLabel>Language</ControlLabel>
                         <FormControl
+                            required
                             componentClass="select"
                             placeholder="Select"
                             onChange={e => this.setState({lang: e.target.value})}
