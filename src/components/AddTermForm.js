@@ -82,7 +82,12 @@ class AddTermForm extends Component {
                         </FormControl>
                     </FormGroup>
                     <FormGroup bsSize="large">
-                        <Button type="submit" className="btn btn-primary" bsSize="lg">
+                        <Button
+                            type="submit"
+                            className="btn btn-primary"
+                            bsSize="lg"
+                            disabled={this.props.isLoading}
+                        >
                             Submit
                         </Button>
                         {this.renderAlert()}
@@ -92,6 +97,7 @@ class AddTermForm extends Component {
                     onClick={this.props.getTerms}
                     className="btn btn-primary"
                     bsSize="lg"
+                    disabled={this.props.isLoading}
                 >Refresh Glossary</Button>
             </Panel>
         );

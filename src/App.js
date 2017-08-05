@@ -54,6 +54,7 @@ class App extends Component {
                         render={() => <SearchView
                             glossary={this.state.glossary}
                             getTerms={this.getTerms}
+                            isLoading={this.state.isLoading}
                         /> }
                     />
                     <Route exact path="/about" component={About} />

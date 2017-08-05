@@ -28,7 +28,10 @@ class SearchView extends Component {
             <Col>
                 <Row>
                     <Col className="col-lg-12 col-xs-12 col-md-12">
-                        <AddTermForm getTerms={this.props.getTerms}/>
+                        <AddTermForm
+                            getTerms={this.props.getTerms}
+                            isLoading={this.props.isLoading}
+                        />
                     </Col>
                 </Row>
                 <Row>

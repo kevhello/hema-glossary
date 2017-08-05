@@ -5,11 +5,13 @@
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
+    "concurrently": "^3.5.0",
     "cors": "^2.8.4",
     "express": "^4.15.3",
     "http": "0.0.0",
     "mongoose": "^4.11.5",
     "morgan": "^1.8.2",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.1",
     "react-dom": "^15.6.1",
@@ -20,15 +22,14 @@
   },
   "scripts": {
     "start": "node server.js",
-    "start-d": "react-scripts start",
-    "dev": "nodemon server.js",
+    "dev": "concurrently \"react-scripts start\" \"nodemon server.js\"",
     "build": "react-scripts build",
     "test-r": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha server/**/*.test.js",
     "test-watch": "nodemon --exec npm test"
   },
-  "engines":{
+  "engines": {
     "node": "7.10.0"
   }
 }
