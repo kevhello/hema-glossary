@@ -30,7 +30,7 @@ class App extends Component {
   };
 
   renderLoading = () => (
-      this.state.isLoading ? <div className="loader"></div> : null
+      this.state.isLoading ? <div className="loader text-center"></div> : null
   );
 
   renderAlert = () => (
@@ -47,8 +47,7 @@ class App extends Component {
     return (
         <BrowserRouter>
             <div className="container">
-                {/*<Header />*/}
-
+                <Header />
                 <Switch>
                     <Route
                         exact path="/"
@@ -60,7 +59,7 @@ class App extends Component {
                     <Route exact path="/about" component={About} />
                 </Switch>
                 <Row>
-                    <Col>
+                    <Col className="col-md-12 col-lg-12">
                         {this.renderLoading()}
                         {this.renderAlert()}
                     </Col>

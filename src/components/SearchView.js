@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import FilterButton from './FilterButton';
 import SearchList from './SearchList';
 import AddTermForm from './AddTermForm';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Grid, Row, Col, Form, FormControl, FormGroup} from 'react-bootstrap';
 
 class SearchView extends Component {
     state = {
@@ -25,33 +25,39 @@ class SearchView extends Component {
         const filterList = ['ALL', 'ITALIAN', 'GERMAN'];
 
         return(
-            <Grid>
+            <Col>
                 <Row>
-                    <AddTermForm getTerms={this.props.getTerms}/>
-                </Row>
-                <Row>
-                    <Col xs={12} sm={12} md={3}  className="col-lg-offset-3" >
-                        <FilterButton
-                            id="filter-button"
-                            filterList={filterList}
-                            currentFilter={this.state.currentFilter}
-                            onDropDownChange={this.onDropDownChange}
-                        />
-                    </Col>
-                    <Col xs={12} sm={12} md={6} >
-                        <input
-                            style={{width: '60%'}}
-                            id="input-field"
-                            type="text"
-                            value={this.state.searchInput}
-                            onChange={this.onInputChange}
-                            className="form-control"
-                            placeholder="Search"
-                        />
+                    <Col className="col-lg-12 col-xs-12 col-md-12">
+                        <AddTermForm getTerms={this.props.getTerms}/>
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={12} md={12}>
+                    <Col className="col-lg-12 col-xs-12 col-md-12" >
+                        <Form inline id="form-search">
+                            <FormGroup>
+                            <FilterButton
+                                id="filter-button"
+                                filterList={filterList}
+                                currentFilter={this.state.currentFilter}
+                                onDropDownChange={this.onDropDownChange}
+                            />
+                            </FormGroup>
+                            <div id="spacer"></div>
+                            <FormGroup bsSize="large">
+                            <FormControl
+                                id="input-field"
+                                type="text"
+                                value={this.state.searchInput}
+                                onChange={this.onInputChange}
+                                className="form-control"
+                                placeholder="Search"
+                            />
+                            </FormGroup>
+                        </Form>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="col-lg-12 col-xs-12 col-md-12" >
                         <SearchList
                             glossary={this.props.glossary}
                             currentFilter={this.state.currentFilter}
@@ -59,7 +65,7 @@ class SearchView extends Component {
                         />
                     </Col>
                 </Row>
-            </Grid>
+            </Col>
         );
     }
 }

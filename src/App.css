@@ -26,16 +26,6 @@
 :root {
   font-size: 16px;
   font-family: SansSerif;
-  font-weight: 600;
-}
-
-#word-button {
-    width: 100%;
-}
-
-#filter-button {
-    margin-right: 5px;
-    padding-right: 5px;
 }
 
 .loader {
@@ -51,3 +41,16 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+#form-search {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-content: center;
+}
+
+#spacer {
+    width: 20px;
+}
+

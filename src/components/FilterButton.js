@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {DropdownButton, MenuItem} from 'react-bootstrap';
+import {DropdownButton, MenuItem, ButtonGroup} from 'react-bootstrap';
 
 
 class FilterButton extends Component {
@@ -20,15 +20,17 @@ class FilterButton extends Component {
         );
 
         return(
-            <DropdownButton
-                bsSize="lg"
-                bsStyle="primary"
-                title="Langauge"
-                id={`dropdown-basic`}
-                onSelect={this.props.onDropDownChange}
-            >
-                {menuItems}
-            </DropdownButton>
+            <ButtonGroup>
+                <DropdownButton
+                    bsSize="lg"
+                    bsStyle="primary"
+                    title="Langauge"
+                    id={`dropdown-basic`}
+                    onSelect={this.props.onDropDownChange}
+                >
+                    {menuItems}
+                </DropdownButton>
+            </ButtonGroup>
         );
     }
 }

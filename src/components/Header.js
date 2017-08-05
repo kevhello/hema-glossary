@@ -1,23 +1,17 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import {Navbar, NavItem, Nav} from 'react-bootstrap';
+import {PageHeader, NavItem, Nav} from 'react-bootstrap';
 
 class Header extends Component {
     render(){
         return(
-            <Navbar inverse collapseOnSelect className="header">
-                <Navbar.Header>
-                    <Navbar.Brand>
-                        <Link to="/">HEMA Glossary</Link>
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                </Navbar.Header>
-                <Navbar.Collapse>
-                    <Nav>
-                        <NavItem eventKey={2} ><Link to="/about">About</Link></NavItem>
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+            <div>
+                <PageHeader>HEMA Glossary <small>{"\n"}Historical European Martial Arts Glossary</small></PageHeader>
+                <Nav bsStyle="tabs" justified activeKey={1} onSelect={this.handleSelect}>
+                    <NavItem eventKey={1}><Link to="/">Home</Link></NavItem>
+                    <NavItem eventKey={2}><Link to="/about">About</Link></NavItem>
+                </Nav>
+            </div>
         );
     }
 }

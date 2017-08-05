@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FormControl, Button, FormGroup, ControlLabel} from 'react-bootstrap';
+import {FormControl, Button, FormGroup, Panel, ControlLabel} from 'react-bootstrap';
 import axios from 'axios';
 
 class AddTermForm extends Component {
@@ -40,7 +40,7 @@ class AddTermForm extends Component {
 
     render(){
         return (
-            <div>
+            <Panel header="Add a word to the glossary" bsStyle="primary">
                 <form onSubmit={this.submitForm}>
                     <FormGroup bsSize="large">
                         <ControlLabel>Word:</ControlLabel>
@@ -82,7 +82,7 @@ class AddTermForm extends Component {
                         </FormControl>
                     </FormGroup>
                     <FormGroup bsSize="large">
-                        <Button type="submit" className="btn btn-primary">
+                        <Button type="submit" className="btn btn-primary" bsSize="lg">
                             Submit
                         </Button>
                         {this.renderAlert()}
@@ -91,8 +91,9 @@ class AddTermForm extends Component {
                 <Button
                     onClick={this.props.getTerms}
                     className="btn btn-primary"
+                    bsSize="lg"
                 >Refresh Glossary</Button>
-            </div>
+            </Panel>
         );
     }
 }
