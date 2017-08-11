@@ -17,8 +17,6 @@ class AddTermForm extends Component {
 
         try {
             // Add term to database
-            // const POST_URL = 'http://localhost:3090/terms';
-            const POST_URL = 'https://hema-glossary.herokuapp.com/terms';
             await axios.post('/terms', {
                 word: this.state.word,
                 trans: this.state.trans,
@@ -26,7 +24,7 @@ class AddTermForm extends Component {
                 lang: this.state.lang,
             });
 
-            // Clear error message
+            // Clear error message and form inputs
             this.setState({
                 word: '',
                 trans: '',
