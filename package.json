@@ -2,6 +2,11 @@
   "name": "hema-glossary",
   "version": "0.1.0",
   "private": true,
+  "proxy": {
+    "/terms": {
+      "target": "http://localhost:3090"
+    }
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",

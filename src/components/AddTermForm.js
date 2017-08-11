@@ -19,7 +19,7 @@ class AddTermForm extends Component {
             // Add term to database
             // const POST_URL = 'http://localhost:3090/terms';
             const POST_URL = 'https://hema-glossary.herokuapp.com/terms';
-            await axios.post(POST_URL, {
+            await axios.post('/terms', {
                 word: this.state.word,
                 trans: this.state.trans,
                 comments: this.state.comments,
